@@ -20,7 +20,7 @@ I split the dataset into 2 files:
 2. Essay_Test (contains only rows from disputed without filename column)
 ```{r}
 library(dplyr)
-Essay_Raw <- read.csv("~/R/Disputed_Essay_data.csv")
+Essay_Raw <- read.csv("/cloud/project/Disputed_Essay_data.csv")
 Essay_Clean <- select (Essay_Raw,-c(filename))
 Essay_Train <- filter(Essay_Clean, grepl('Hamilton|Madison', author))
 Essay_Test <- filter(Essay_Clean, grepl('dispt', author))
@@ -51,7 +51,7 @@ library(ggplot2)
 library(lattice)
 library(e1071)
 
-education <- read.csv("xAPI-Edu-Data.csv", header = TRUE)
+education <- read.csv("/cloud/project/xAPI-Edu-Data.csv", header = TRUE)
 
 summary(education)
 
